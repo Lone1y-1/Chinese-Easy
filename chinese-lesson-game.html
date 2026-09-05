@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汉语学堂 · เรียนจีนผ่านเกม</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="logo">
+        <span class="logo-flag">🇨🇳</span>
+        <span>Chinese Easy</span>
+    </div>
+
+    <nav class="nav-main" aria-label="เมนูหลัก">
+        <a href="index.html"
+           class="home-icon"
+           title="Home"
+           aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+                <path d="M9 21v-6h6v6"></path>
+            </svg>
+        </a>
+
+        <div class="nav-dropdown">
+            <button class="dropdown-btn"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                <span>📚 บทเรียน</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="บท1.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔤</span>
+                    <span>
+                        <strong>บทที่ 1</strong>
+                        <small>พื้นฐานภาษาจีนและการทักทาย</small>
+                    </span>
+                </a>
+                <a href="บท2.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔢</span>
+                    <span>
+                        <strong>บทที่ 2</strong>
+                        <small>ตัวเลข เวลา และวันที่</small>
+                    </span>
+                </a>
+                <a href="บท3.html" class="lesson-menu-item">
+                    <span class="lesson-icon">👨‍👩‍👧‍👦</span>
+                    <span>
+                        <strong>บทที่ 3</strong>
+                        <small>ครอบครัวและชีวิตประจำวัน</small>
+                    </span>
+                </a>
+                <a href="บท4.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🛒</span>
+                    <span>
+                        <strong>บทที่ 4</strong>
+                        <small>การซื้อของและการสั่งอาหาร</small>
+                    </span>
+                </a>
+                <a href="บท5.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🚆</span>
+                    <span>
+                        <strong>บทที่ 5</strong>
+                        <small>การเดินทางและการถามทาง</small>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <a href="chinese-lesson-game.html"
+           class="nav-link active">
+            🎮 เกมฝึกภาษา
+        </a>
+    </nav>
+
+    <div class="top-actions navbar-actions">
+        <div id="userArea"></div>
+        <button id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="เปลี่ยนธีม">🌙</button>
+    </div>
+</header>
+<div class="fiber"></div>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <span class="cn">汉语学堂</span>
+      <span class="th">เรียนภาษาจีนผ่านเกม · 5 บทเรียน</span>
+    </div>
+    <div class="top-actions">
+      <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊 เสียง</button>
+      <div class="score-chip"><span class="dot"></span><span id="scoreChipText">รวมตราประทับ 0 ดวง</span></div>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <section class="screen active" id="screen-home">
+    <p class="intro">เลือกบทเรียนที่ต้องการฝึก แต่ละบทมีสองด่าน — ทายความหมายจากตัวอักษรจีน และเกมจับคู่ความจำ เก็บตราประทับให้ครบทุกบทเพื่อฝึกคำศัพท์ให้แม่นยำ</p>
+    <div class="shelf" id="chapterShelf"></div>
+  </section>
+
+  <!-- LESSON MENU -->
+  <section class="screen" id="screen-lesson">
+    <button class="back-link" onclick="playClickSound(); goHome()">← กลับไปเลือกบท</button>
+    <div class="lesson-hero">
+      <div class="cn-title" id="lessonCnTitle"></div>
+      <div class="th-title" id="lessonThTitle"></div>
+    </div>
+    <div class="mode-grid">
+      <button class="mode-card" onclick="playStartSound(); startQuiz()">
+        <h3>ทายความหมาย</h3>
+        <p>ดูตัวอักษรจีนและพินอิน แล้วเลือกความหมายภาษาไทยที่ถูกต้องจาก 4 ตัวเลือก</p>
+      </button>
+      <button class="mode-card" onclick="playStartSound(); startMatch()">
+        <h3>เกมจับคู่ความจำ</h3>
+        <p>พลิกไพ่หาคู่ระหว่างตัวอักษรจีนกับความหมายภาษาไทยให้ครบทุกคู่</p>
+      </button>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="screen" id="screen-quiz">
+    <button class="back-link" onclick="playClickSound(); goLessonMenu()">← กลับไปเลือกด่าน</button>
+    <div class="quiz-top">
+      <span id="quizProgressText">คำที่ 1 / 12</span>
+      <span id="quizScoreText">ถูก 0</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="quizProgressFill"></div></div>
+    <div class="quiz-card">
+      <div class="seal-stamp" id="quizSeal">对</div>
+      <div class="quiz-hanzi" id="quizHanzi"></div>
+      <div class="quiz-pinyin" id="quizPinyin"></div>
+      <div class="quiz-question-label">แปลว่าอะไร?</div>
+      <div class="options" id="quizOptions"></div>
+      <div class="quiz-next" id="quizNextWrap" style="display:none;">
+        <button class="primary" onclick="playClickSound(); nextQuizQuestion()">ข้อถัดไป →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATCH -->
+  <section class="screen" id="screen-match">
+    <button class="back-link" onclick="playClickSound(); goLessonMenu()">← กลับไปเลือกด่าน</button>
+    <div class="match-top">
+      <span id="matchPairsText">จับคู่แล้ว 0 / 6</span>
+      <span id="matchMovesText">พลิกไพ่ 0 ครั้ง</span>
+    </div>
+    <div class="match-grid" id="matchGrid"></div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen" id="screen-result">
+    <div class="result-card">
+      <div class="big" id="resultTitle"></div>
+      <div class="sub" id="resultSub"></div>
+      <div class="seals-row" id="resultSeals"></div>
+      <div class="result-actions">
+        <button class="primary" onclick="playStartSound(); replayLast()">เล่นด่านนี้อีกครั้ง</button>
+        <button class="ghost" onclick="playClickSound(); goLessonMenu()">เลือกด่านอื่น</button>
+        <button class="ghost" onclick="playClickSound(); goHome()">เลือกบทอื่น</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ===================== DATA ===================== */
+const chapters = [
+  {
+    id:1, cn:"第一课", th:"พื้นฐานภาษาจีนและการทักทาย", subtitle:"你好！",
+    words:[
+      ["你好","nǐ hǎo","สวัสดี"], ["您好","nín hǎo","สวัสดี (สุภาพ)"], ["我","wǒ","ฉัน / ผม"],
+      ["你","nǐ","คุณ"], ["您","nín","คุณ (สุภาพ)"], ["他","tā","เขา"], ["她","tā","เธอ"],
+      ["是","shì","เป็น / คือ"], ["叫","jiào","ชื่อ / เรียกว่า"], ["名字","míngzi","ชื่อ"],
+      ["什么","shénme","อะไร"], ["谁","shéi","ใคร"], ["很","hěn","มาก / ค่อนข้าง"], ["好","hǎo","ดี"],
+      ["是的","shì de","ใช่"], ["不","bù","ไม่ / ไม่ใช่"], ["谢谢","xièxie","ขอบคุณ"],
+      ["不客气","bú kèqi","ไม่เป็นไร"], ["对不起","duìbuqǐ","ขอโทษ"], ["再见","zàijiàn","ลาก่อน"],
+      ["请","qǐng","กรุณา / เชิญ"], ["认识","rènshi","รู้จัก"], ["高兴","gāoxìng","ดีใจ / ยินดี"],
+      ["学生","xuéshēng","นักเรียน / นักศึกษา"], ["老师","lǎoshī","ครู / อาจารย์"], ["中文","Zhōngwén","ภาษาจีน"]
+    ]
+  },
+  {
+    id:2, cn:"第二课", th:"ตัวเลข เวลา และวันที่", subtitle:"现在几点？",
+    words:[
+      ["一","yī","หนึ่ง"], ["二","èr","สอง"], ["三","sān","สาม"], ["四","sì","สี่"], ["五","wǔ","ห้า"],
+      ["六","liù","หก"], ["七","qī","เจ็ด"], ["八","bā","แปด"], ["九","jiǔ","เก้า"], ["十","shí","สิบ"],
+      ["百","bǎi","ร้อย"], ["岁","suì","ปี (บอกอายุ)"], ["时间","shíjiān","เวลา"], ["现在","xiànzài","ตอนนี้"],
+      ["几","jǐ","กี่"], ["点","diǎn","โมง / นาฬิกา"], ["分","fēn","นาที"], ["今天","jīntiān","วันนี้"],
+      ["昨天","zuótiān","เมื่อวาน"], ["明天","míngtiān","พรุ่งนี้"], ["年","nián","ปี"], ["月","yuè","เดือน"],
+      ["号","hào","วันที่"], ["星期","xīngqī","สัปดาห์"], ["星期一","xīngqī yī","วันจันทร์"],
+      ["星期二","xīngqī èr","วันอังคาร"], ["星期三","xīngqī sān","วันพุธ"], ["星期四","xīngqī sì","วันพฤหัสบดี"],
+      ["星期五","xīngqī wǔ","วันศุกร์"], ["星期六","xīngqī liù","วันเสาร์"], ["星期日","xīngqī rì","วันอาทิตย์"]
+    ]
+  },
+  {
+    id:3, cn:"第三课", th:"ครอบครัวและชีวิตประจำวัน", subtitle:"我的家人",
+    words:[
+      ["家","jiā","บ้าน / ครอบครัว"], ["家人","jiārén","สมาชิกครอบครัว"], ["爸爸","bàba","พ่อ"],
+      ["妈妈","māma","แม่"], ["哥哥","gēge","พี่ชาย"], ["姐姐","jiějie","พี่สาว"], ["弟弟","dìdi","น้องชาย"],
+      ["妹妹","mèimei","น้องสาว"], ["朋友","péngyou","เพื่อน"], ["人","rén","คน"], ["有","yǒu","มี"],
+      ["没有","méiyǒu","ไม่มี"], ["起床","qǐchuáng","ตื่นนอน"], ["睡觉","shuìjiào","นอน"],
+      ["吃饭","chīfàn","กินข้าว"], ["喝水","hē shuǐ","ดื่มน้ำ"], ["上课","shàngkè","เข้าเรียน"],
+      ["学习","xuéxí","เรียน"], ["工作","gōngzuò","ทำงาน"], ["回家","huí jiā","กลับบ้าน"],
+      ["休息","xiūxi","พักผ่อน"], ["早上","zǎoshang","ตอนเช้า"], ["中午","zhōngwǔ","ตอนเที่ยง"],
+      ["下午","xiàwǔ","ตอนบ่าย"], ["晚上","wǎnshang","ตอนเย็น / กลางคืน"], ["每天","měitiān","ทุกวัน"]
+    ]
+  },
+  {
+    id:4, cn:"第四课", th:"การซื้อของและการสั่งอาหาร", subtitle:"它要多少钱？",
+    words:[
+      ["买","mǎi","ซื้อ"], ["卖","mài","ขาย"], ["要","yào","ต้องการ"], ["想","xiǎng","อยาก"],
+      ["钱","qián","เงิน"], ["价格","jiàgé","ราคา"], ["多少","duōshao","เท่าไหร่"], ["贵","guì","แพง"],
+      ["便宜","piányi","ถูก"], ["这个","zhège","อันนี้"], ["那个","nàge","อันนั้น"], ["多少个","duōshao ge","กี่อัน"],
+      ["斤","jīn","จิน (หน่วยน้ำหนักจีน)"], ["吃","chī","กิน"], ["喝","hē","ดื่ม"], ["饭","fàn","ข้าว / อาหาร"],
+      ["菜","cài","อาหาร / กับข้าว"], ["水","shuǐ","น้ำ"], ["茶","chá","ชา"], ["咖啡","kāfēi","กาแฟ"],
+      ["米饭","mǐfàn","ข้าวสวย"], ["面条","miàntiáo","บะหมี่"], ["鸡肉","jīròu","เนื้อไก่"], ["猪肉","zhūròu","เนื้อหมู"],
+      ["好吃","hǎochī","อร่อย"], ["杯","bēi","แก้ว"], ["碗","wǎn","ชาม"], ["菜单","càidān","เมนู"], ["服务员","fúwùyuán","พนักงาน"]
+    ]
+  },
+  {
+    id:5, cn:"第五课", th:"การเดินทางและการถามทาง", subtitle:"我在哪里？",
+    words:[
+      ["去","qù","ไป"], ["来","lái","มา"], ["走","zǒu","เดิน"], ["坐","zuò","นั่ง / โดยสาร"], ["车","chē","รถ"],
+      ["出租车","chūzūchē","แท็กซี่"], ["公共汽车","gōnggòng qìchē","รถโดยสาร"], ["地铁","dìtiě","รถไฟใต้ดิน"],
+      ["火车","huǒchē","รถไฟ"], ["飞机","fēijī","เครื่องบิน"], ["机场","jīchǎng","สนามบิน"], ["车站","chēzhàn","สถานี"],
+      ["学校","xuéxiào","โรงเรียน"], ["医院","yīyuàn","โรงพยาบาล"], ["银行","yínháng","ธนาคาร"], ["商店","shāngdiàn","ร้านค้า"],
+      ["餐厅","cāntīng","ร้านอาหาร"], ["厕所","cèsuǒ","ห้องน้ำ"], ["哪里","nǎlǐ","ที่ไหน"], ["这里","zhèlǐ","ที่นี่"],
+      ["那里","nàlǐ","ที่นั่น"], ["左边","zuǒbian","ด้านซ้าย"], ["右边","yòubian","ด้านขวา"], ["前面","qiánmiàn","ด้านหน้า"],
+      ["后面","hòumiàn","ด้านหลัง"], ["里面","lǐmiàn","ด้านใน"], ["外面","wàimiàn","ด้านนอก"], ["远","yuǎn","ไกล"],
+      ["近","jìn","ใกล้"], ["直走","zhí zǒu","เดินตรงไป"], ["怎么走","zěnme zǒu","ไปอย่างไร"]
+    ]
+  }
+];
+
+
+/* ===================== GAME SOUND EFFECTS ===================== */
+let gameAudioCtx = null;
+let soundEnabled = true;
+
+function getAudioContext(){
+  if(!gameAudioCtx){
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if(!AC) return null;
+    gameAudioCtx = new AC();
+  }
+  if(gameAudioCtx.state === 'suspended') gameAudioCtx.resume();
+  return gameAudioCtx;
+}
+
+function playTone(freq, duration=0.12, type='sine', volume=0.045, delay=0){
+  if(!soundEnabled) return;
+  const ctx = getAudioContext();
+  if(!ctx) return;
+
+  const now = ctx.currentTime + delay;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, now);
+  gain.gain.setValueAtTime(0.0001, now);
+  gain.gain.exponentialRampToValueAtTime(volume, now + 0.012);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(now);
+  osc.stop(now + duration + 0.02);
+}
+
+function playClickSound(){
+  playTone(520, 0.07, 'sine', 0.035);
+}
+
+function playCorrectSound(){
+  playTone(660, 0.10, 'sine', 0.045);
+  playTone(880, 0.16, 'sine', 0.045, 0.09);
+}
+
+function playWrongSound(){
+  playTone(220, 0.12, 'triangle', 0.04);
+  playTone(165, 0.18, 'triangle', 0.035, 0.10);
+}
+
+function playFlipSound(){
+  playTone(360, 0.055, 'sine', 0.025);
+}
+
+function playMatchSound(){
+  playTone(523, 0.08, 'sine', 0.04);
+  playTone(659, 0.08, 'sine', 0.04, 0.08);
+  playTone(784, 0.18, 'sine', 0.045, 0.16);
+}
+
+function playFinishSound(){
+  playTone(523, 0.10, 'sine', 0.04);
+  playTone(659, 0.10, 'sine', 0.04, 0.10);
+  playTone(784, 0.10, 'sine', 0.04, 0.20);
+  playTone(1047, 0.28, 'sine', 0.05, 0.30);
+}
+
+function playStartSound(){
+  playTone(392, 0.08, 'sine', 0.035);
+  playTone(523, 0.12, 'sine', 0.04, 0.08);
+}
+
+function toggleSound(){
+  soundEnabled = !soundEnabled;
+  const btn = document.getElementById('soundToggle');
+  if(btn){
+    btn.textContent = soundEnabled ? '🔊 เสียง' : '🔇 ปิดเสียง';
+    btn.classList.toggle('muted', !soundEnabled);
+  }
+  if(soundEnabled) playClickSound();
+}
+
+
+/* ===================== STATE ===================== */
+let totalSeals = 0;
+let currentChapter = null;
+let currentMode = null; // 'quiz' | 'match'
+
+// quiz state
+let quizQuestions = [];
+let quizIndex = 0;
+let quizCorrect = 0;
+let quizAnswered = false;
+
+// match state
+let matchCards = [];
+let matchFlipped = [];
+let matchSolvedCount = 0;
+let matchMoves = 0;
+let matchTotalPairs = 6;
+let matchLock = false;
+
+/* ===================== HELPERS ===================== */
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function sample(arr,n){ return shuffle(arr).slice(0,n); }
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function updateScoreChip(){
+  document.getElementById('scoreChipText').textContent = `รวมตราประทับ ${totalSeals} ดวง`;
+}
+
+/* ===================== HOME ===================== */
+function renderHome(){
+  const shelf = document.getElementById('chapterShelf');
+  shelf.innerHTML = '';
+  chapters.forEach(ch=>{
+    const card = document.createElement('button');
+    card.className = 'chapter-card';
+    card.innerHTML = `
+      <span class="chapter-num">${String(ch.id).padStart(2,'0')}</span>
+      <span class="chapter-info">
+        <div class="cn-title">${ch.cn} · ${ch.subtitle}</div>
+        <div class="th-title">${ch.th}</div>
+      </span>
+      <span class="chapter-meta">${ch.words.length} คำศัพท์</span>
+    `;
+    card.onclick = ()=> { playClickSound(); openLesson(ch.id); };
+    shelf.appendChild(card);
+  });
+}
+function goHome(){ currentChapter = null; showScreen('screen-home'); }
+
+/* ===================== LESSON MENU ===================== */
+function openLesson(id){
+  currentChapter = chapters.find(c=>c.id===id);
+  document.getElementById('lessonCnTitle').textContent = `${currentChapter.cn} · ${currentChapter.subtitle}`;
+  document.getElementById('lessonThTitle').textContent = currentChapter.th;
+  showScreen('screen-lesson');
+}
+function goLessonMenu(){ showScreen('screen-lesson'); }
+
+/* ===================== QUIZ ===================== */
+function startQuiz(){
+  currentMode = 'quiz';
+  const pool = currentChapter.words;
+  const count = Math.min(12, pool.length);
+  quizQuestions = sample(pool, count);
+  quizIndex = 0;
+  quizCorrect = 0;
+  showScreen('screen-quiz');
+  renderQuizQuestion();
+}
+function renderQuizQuestion(){
+  quizAnswered = false;
+  const total = quizQuestions.length;
+  const [hz, py, th] = quizQuestions[quizIndex];
+  document.getElementById('quizProgressText').textContent = `คำที่ ${quizIndex+1} / ${total}`;
+  document.getElementById('quizScoreText').textContent = `ถูก ${quizCorrect}`;
+  document.getElementById('quizProgressFill').style.width = `${(quizIndex/total)*100}%`;
+  document.getElementById('quizHanzi').textContent = hz;
+  document.getElementById('quizPinyin').textContent = py;
+  document.getElementById('quizSeal').classList.remove('show');
+  document.getElementById('quizNextWrap').style.display = 'none';
+
+  // build options: correct + 3 distractors from full chapter pool (fallback to all chapters if needed)
+  let distractorPool = currentChapter.words.filter(w=>w[2]!==th);
+  if(distractorPool.length < 3){
+    chapters.forEach(c=>{ if(c.id!==currentChapter.id) distractorPool = distractorPool.concat(c.words); });
+  }
+  const distractors = sample(distractorPool, 3).map(w=>w[2]);
+  const options = shuffle([th, ...distractors]);
+
+  const optWrap = document.getElementById('quizOptions');
+  optWrap.innerHTML = '';
+  options.forEach(opt=>{
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.textContent = opt;
+    btn.onclick = ()=> selectQuizOption(btn, opt, th);
+    optWrap.appendChild(btn);
+  });
+}
+function selectQuizOption(btn, chosen, correctAnswer){
+  if(quizAnswered) return;
+  quizAnswered = true;
+  const allBtns = document.querySelectorAll('#quizOptions .opt-btn');
+  allBtns.forEach(b=>{
+    b.disabled = true;
+    if(b.textContent === correctAnswer) b.classList.add('correct');
+  });
+  if(chosen === correctAnswer){
+    quizCorrect++;
+    totalSeals++;
+    updateScoreChip();
+    document.getElementById('quizSeal').classList.add('show');
+  } else {
+    btn.classList.add('wrong');
+  }
+  document.getElementById('quizScoreText').textContent = `ถูก ${quizCorrect}`;
+  document.getElementById('quizNextWrap').style.display = 'flex';
+}
+function nextQuizQuestion(){
+  quizIndex++;
+  if(quizIndex >= quizQuestions.length){
+    document.getElementById('quizProgressFill').style.width = '100%';
+    finishQuiz();
+  } else {
+    renderQuizQuestion();
+  }
+}
+function finishQuiz(){
+  const total = quizQuestions.length;
+  const pct = Math.round((quizCorrect/total)*100);
+  let verdict = 'ต้องฝึกอีกนิด';
+  if(pct===100) verdict = 'ยอดเยี่ยม เก็บครบทุกคำ!';
+  else if(pct>=75) verdict = 'เก่งมาก ใกล้ครบแล้ว';
+  else if(pct>=50) verdict = 'ทำได้ดี ลองอีกรอบ';
+  document.getElementById('resultTitle').textContent = `${quizCorrect} / ${total} คำ`;
+  document.getElementById('resultSub').textContent = `${currentChapter.cn} · ${verdict}`;
+  const sealsRow = document.getElementById('resultSeals');
+  sealsRow.innerHTML = '';
+  for(let i=0;i<total;i++){
+    const s = document.createElement('span');
+    s.className = 's' + (i<quizCorrect ? '' : ' miss');
+    s.textContent = '印';
+    s.style.animationDelay = (i*0.04)+'s';
+    sealsRow.appendChild(s);
+  }
+  showScreen('screen-result');
+}
+
+/* ===================== MATCH ===================== */
+function startMatch(){
+  currentMode = 'match';
+  const pool = currentChapter.words;
+  matchTotalPairs = Math.min(6, pool.length);
+  const chosen = sample(pool, matchTotalPairs);
+  let cards = [];
+  chosen.forEach((w, idx)=>{
+    cards.push({pairId:idx, type:'hz', display:w[0], sub:w[1]});
+    cards.push({pairId:idx, type:'th', display:w[2], sub:''});
+  });
+  matchCards = shuffle(cards);
+  matchFlipped = [];
+  matchSolvedCount = 0;
+  matchMoves = 0;
+  matchLock = false;
+  showScreen('screen-match');
+  renderMatch();
+}
+function renderMatch(){
+  document.getElementById('matchPairsText').textContent = `จับคู่แล้ว ${matchSolvedCount} / ${matchTotalPairs}`;
+  document.getElementById('matchMovesText').textContent = `พลิกไพ่ ${matchMoves} ครั้ง`;
+  const grid = document.getElementById('matchGrid');
+  grid.innerHTML = '';
+  matchCards.forEach((c, i)=>{
+    const cardEl = document.createElement('div');
+    cardEl.className = 'card';
+    cardEl.dataset.index = i;
+    cardEl.innerHTML = `
+      <div class="card-inner">
+        <div class="card-face card-back"></div>
+        <div class="card-face card-front">
+          <div class="hz">${c.type==='hz' ? c.display : ''}</div>
+          <div class="th">${c.type==='th' ? c.display : (c.sub||'')}</div>
+        </div>
+      </div>
+    `;
+    cardEl.onclick = ()=> flipMatchCard(i, cardEl);
+    grid.appendChild(cardEl);
+  });
+}
+function flipMatchCard(i, el){
+  if(matchLock) return;
+  if(el.classList.contains('flipped') || el.classList.contains('solved')) return;
+  if(matchFlipped.length===2) return;
+
+  el.classList.add('flipped');
+  matchFlipped.push({i, el});
+
+  if(matchFlipped.length===2){
+    matchMoves++;
+    document.getElementById('matchMovesText').textContent = `พลิกไพ่ ${matchMoves} ครั้ง`;
+    const [a,b] = matchFlipped;
+    const ca = matchCards[a.i], cb = matchCards[b.i];
+    if(ca.pairId===cb.pairId){
+      matchLock = true;
+      setTimeout(()=>{
+        a.el.classList.add('solved');
+        b.el.classList.add('solved');
+        matchSolvedCount++;
+        totalSeals++;
+        updateScoreChip();
+        document.getElementById('matchPairsText').textContent = `จับคู่แล้ว ${matchSolvedCount} / ${matchTotalPairs}`;
+        matchFlipped = [];
+        matchLock = false;
+        if(matchSolvedCount===matchTotalPairs){
+          setTimeout(()=>{ playFinishSound(); finishMatch(); }, 500);
+        }
+      }, 400);
+    } else {
+      matchLock = true;
+      setTimeout(()=>{
+        a.el.classList.remove('flipped');
+        b.el.classList.remove('flipped');
+        matchFlipped = [];
+        matchLock = false;
+      }, 700);
+    }
+  }
+}
+function finishMatch(){
+  let verdict = 'ต้องฝึกอีกนิด';
+  const efficiency = matchTotalPairs / matchMoves;
+  if(efficiency >= 0.8) verdict = 'ความจำเป๊ะมาก!';
+  else if(efficiency >= 0.55) verdict = 'เก่งมาก';
+  else verdict = 'จับคู่ครบแล้ว ลองให้เร็วขึ้น';
+  document.getElementById('resultTitle').textContent = `จับคู่ครบ ${matchTotalPairs} คู่`;
+  document.getElementById('resultSub').textContent = `${currentChapter.cn} · ใช้ ${matchMoves} ครั้ง · ${verdict}`;
+  const sealsRow = document.getElementById('resultSeals');
+  sealsRow.innerHTML = '';
+  for(let i=0;i<matchTotalPairs;i++){
+    const s = document.createElement('span');
+    s.className = 's';
+    s.textContent = '印';
+    s.style.animationDelay = (i*0.04)+'s';
+    sealsRow.appendChild(s);
+  }
+  showScreen('screen-result');
+}
+
+/* ===================== RESULT ===================== */
+function replayLast(){
+  if(currentMode==='quiz') startQuiz();
+  else startMatch();
+}
+
+/* ===================== INIT ===================== */
+renderHome();
+updateScoreChip();
+</script>
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Chinese Learn</title>
+
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+    <!-- Background Decorations -->
+    <div class="chinese-bg">
+        <span>中</span>
+        <span>学</span>
+        <span>你</span>
+        <span>好</span>
+        <span>语</span>
+        <span>言</span>
+    </div>
+
+    <!-- Floating Lanterns -->
+    <div class="lantern lantern-1">🏮</div>
+    <div class="lantern lantern-2">🏮</div>
+    <div class="lantern lantern-3">🏮</div>
+
+    <!-- Main -->
+    <main class="auth-container">
+
+        <div class="auth-card">
+
+            <!-- Logo -->
+            <div class="auth-logo">
+                <div class="logo-circle">中</div>
+
+                <h1>Chinese Learn</h1>
+
+                <p>学习中文 · Learn Chinese</p>
+            </div>
+
+            <!-- Title -->
+            <div class="auth-title">
+
+                <span class="title-icon">🐼</span>
+
+                <div>
+                    <h2>ยินดีต้อนรับกลับมา</h2>
+                    <p>เข้าสู่ระบบเพื่อเริ่มเรียนภาษาจีน</p>
+                </div>
+
+            </div>
+
+            <!-- Form -->
+            <form id="loginForm">
+
+                <!-- Username -->
+                <div class="input-group">
+
+                    <label for="loginUsername">
+                        👤 ชื่อผู้เรียน
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">👤</span>
+
+                        <input
+                            type="text"
+                            id="loginUsername"
+                            placeholder="กรอกชื่อผู้เรียน"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="loginPassword">
+                        🔒 รหัสผ่าน
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">🔒</span>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="กรอกรหัสผ่าน"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('loginPassword', this)"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Remember -->
+                <div class="form-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>จำชื่อผู้เรียนของฉัน</span>
+
+                    </label>
+
+                    <a href="#" onclick="forgotPassword(event)">
+                        ลืมรหัสผ่าน?
+                    </a>
+
+                </div>
+
+                <!-- Button -->
+                <button
+                    type="submit"
+                    class="auth-submit"
+                >
+                    <span>เข้าสู่ระบบ</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>หรือ</span>
+            </div>
+
+            <!-- Signup -->
+            <div class="switch-auth">
+
+                <p>
+                    ยังไม่มีบัญชี?
+                    <a href="signup.html">
+                        สมัครสมาชิก
+                    </a>
+                </p>
+
+            </div>
+
+            <!-- Home -->
+            <a href="index.html" class="home-link">
+                ← กลับหน้าหลัก
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

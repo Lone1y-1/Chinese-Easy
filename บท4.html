@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทที่ 4 - Chinese Easy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo">
+        <span class="logo-flag">🇨🇳</span>
+        <span>Chinese Easy</span>
+    </div>
+
+    <nav class="nav-main" aria-label="เมนูหลัก">
+        <a href="index.html"
+           class="home-icon"
+           title="Home"
+           aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+                <path d="M9 21v-6h6v6"></path>
+            </svg>
+        </a>
+
+        <div class="nav-dropdown">
+            <button class="dropdown-btn active"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                <span>📚 บทเรียน</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="บท1.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔤</span>
+                    <span>
+                        <strong>บทที่ 1</strong>
+                        <small>พื้นฐานภาษาจีนและการทักทาย</small>
+                    </span>
+                </a>
+                <a href="บท2.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔢</span>
+                    <span>
+                        <strong>บทที่ 2</strong>
+                        <small>ตัวเลข เวลา และวันที่</small>
+                    </span>
+                </a>
+                <a href="บท3.html" class="lesson-menu-item">
+                    <span class="lesson-icon">👨‍👩‍👧‍👦</span>
+                    <span>
+                        <strong>บทที่ 3</strong>
+                        <small>ครอบครัวและชีวิตประจำวัน</small>
+                    </span>
+                </a>
+                <a href="บท4.html" class="lesson-menu-item current">
+                    <span class="lesson-icon">🛒</span>
+                    <span>
+                        <strong>บทที่ 4</strong>
+                        <small>การซื้อของและการสั่งอาหาร</small>
+                    </span>
+                </a>
+                <a href="บท5.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🚆</span>
+                    <span>
+                        <strong>บทที่ 5</strong>
+                        <small>การเดินทางและการถามทาง</small>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <a href="chinese-lesson-game.html"
+           class="nav-link">
+            🎮 เกมฝึกภาษา
+        </a>
+    </nav>
+
+    <div class="top-actions navbar-actions">
+        <div id="userArea"></div>
+        <button id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="เปลี่ยนธีม">🌙</button>
+    </div>
+</header>
+
+<main>
+
+<section class="lesson-head">
+
+    <div class="title">
+        <span>04</span>
+
+        <div>
+            <small>บทเรียน</small>
+            <h1>การซื้อของและการสั่งอาหาร</h1>
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+
+<h1>บทที่ 4 การซื้อของและการสั่งอาหาร</h1>
+
+<h2>🛒 คำศัพท์</h2>
+
+<div class="vocab-grid">
+
+<button onclick="speak('买')">
+<strong>买</strong><small>mǎi</small><span>ซื้อ</span>
+</button>
+
+<button onclick="speak('卖')">
+<strong>卖</strong><small>mài</small><span>ขาย</span>
+</button>
+
+<button onclick="speak('要')">
+<strong>要</strong><small>yào</small><span>ต้องการ</span>
+</button>
+
+<button onclick="speak('想')">
+<strong>想</strong><small>xiǎng</small><span>อยาก</span>
+</button>
+
+<button onclick="speak('钱')">
+<strong>钱</strong><small>qián</small><span>เงิน</span>
+</button>
+
+<button onclick="speak('价格')">
+<strong>价格</strong><small>jiàgé</small><span>ราคา</span>
+</button>
+
+<button onclick="speak('多少')">
+<strong>多少</strong><small>duōshao</small><span>เท่าไหร่</span>
+</button>
+
+<button onclick="speak('贵')">
+<strong>贵</strong><small>guì</small><span>แพง</span>
+</button>
+
+<button onclick="speak('便宜')">
+<strong>便宜</strong><small>piányi</small><span>ถูก</span>
+</button>
+
+<button onclick="speak('这个')">
+<strong>这个</strong><small>zhège</small><span>อันนี้</span>
+</button>
+
+<button onclick="speak('那个')">
+<strong>那个</strong><small>nàge</small><span>อันนั้น</span>
+</button>
+
+<button onclick="speak('吃')">
+<strong>吃</strong><small>chī</small><span>กิน</span>
+</button>
+
+<button onclick="speak('喝')">
+<strong>喝</strong><small>hē</small><span>ดื่ม</span>
+</button>
+
+<button onclick="speak('水')">
+<strong>水</strong><small>shuǐ</small><span>น้ำ</span>
+</button>
+
+<button onclick="speak('茶')">
+<strong>茶</strong><small>chá</small><span>ชา</span>
+</button>
+
+<button onclick="speak('咖啡')">
+<strong>咖啡</strong><small>kāfēi</small><span>กาแฟ</span>
+</button>
+
+<button onclick="speak('米饭')">
+<strong>米饭</strong><small>mǐfàn</small><span>ข้าวสวย</span>
+</button>
+
+<button onclick="speak('面条')">
+<strong>面条</strong><small>miàntiáo</small><span>บะหมี่</span>
+</button>
+
+<button onclick="speak('鸡肉')">
+<strong>鸡肉</strong><small>jīròu</small><span>เนื้อไก่</span>
+</button>
+
+<button onclick="speak('猪肉')">
+<strong>猪肉</strong><small>zhūròu</small><span>เนื้อหมู</span>
+</button>
+
+<button onclick="speak('好吃')">
+<strong>好吃</strong><small>hǎochī</small><span>อร่อย</span>
+</button>
+
+</div>
+
+
+<h2>💬 ตัวอย่างประโยค</h2>
+
+<div class="sentences">
+
+<div class="sentence">
+<button onclick="speak('这个多少钱')">🔊</button>
+<div>
+<strong>这个多少钱？</strong>
+<small>Zhège duōshao qián?</small>
+</div>
+<span>อันนี้ราคาเท่าไหร่?</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('太贵了')">🔊</button>
+<div>
+<strong>太贵了。</strong>
+<small>Tài guì le.</small>
+</div>
+<span>แพงเกินไป</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('这个很便宜')">🔊</button>
+<div>
+<strong>这个很便宜。</strong>
+<small>Zhège hěn piányi.</small>
+</div>
+<span>อันนี้ราคาถูกมาก</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我要这个')">🔊</button>
+<div>
+<strong>我要这个。</strong>
+<small>Wǒ yào zhège.</small>
+</div>
+<span>ฉันเอาอันนี้</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我想买这个')">🔊</button>
+<div>
+<strong>我想买这个。</strong>
+<small>Wǒ xiǎng mǎi zhège.</small>
+</div>
+<span>ฉันอยากซื้ออันนี้</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('请给我一杯水')">🔊</button>
+<div>
+<strong>请给我一杯水。</strong>
+<small>Qǐng gěi wǒ yì bēi shuǐ.</small>
+</div>
+<span>กรุณาให้น้ำฉันหนึ่งแก้ว</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我要一碗面条')">🔊</button>
+<div>
+<strong>我要一碗面条。</strong>
+<small>Wǒ yào yì wǎn miàntiáo.</small>
+</div>
+<span>ฉันเอาบะหมี่หนึ่งชาม</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('你要吃什么')">🔊</button>
+<div>
+<strong>你要吃什么？</strong>
+<small>Nǐ yào chī shénme?</small>
+</div>
+<span>คุณต้องการกินอะไร?</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我要吃米饭')">🔊</button>
+<div>
+<strong>我要吃米饭。</strong>
+<small>Wǒ yào chī mǐfàn.</small>
+</div>
+<span>ฉันต้องการกินข้าว</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('买单谢谢')">🔊</button>
+<div>
+<strong>买单，谢谢。</strong>
+<small>Mǎidān, xièxie.</small>
+</div>
+<span>คิดเงินด้วยครับ/ค่ะ ขอบคุณ</span>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>🇨🇳 Chinese Easy · บทที่ 4</footer>
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

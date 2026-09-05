@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Easy - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo">
+        <span class="logo-flag">🇨🇳</span>
+        <span>Chinese Easy</span>
+    </div>
+
+    <nav class="nav-main" aria-label="เมนูหลัก">
+        <a href="index.html"
+           class="home-icon active"
+           title="Home"
+           aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+                <path d="M9 21v-6h6v6"></path>
+            </svg>
+        </a>
+
+        <div class="nav-dropdown">
+            <button class="dropdown-btn"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                <span>📚 บทเรียน</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="บท1.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔤</span>
+                    <span>
+                        <strong>บทที่ 1</strong>
+                        <small>พื้นฐานภาษาจีนและการทักทาย</small>
+                    </span>
+                </a>
+                <a href="บท2.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔢</span>
+                    <span>
+                        <strong>บทที่ 2</strong>
+                        <small>ตัวเลข เวลา และวันที่</small>
+                    </span>
+                </a>
+                <a href="บท3.html" class="lesson-menu-item">
+                    <span class="lesson-icon">👨‍👩‍👧‍👦</span>
+                    <span>
+                        <strong>บทที่ 3</strong>
+                        <small>ครอบครัวและชีวิตประจำวัน</small>
+                    </span>
+                </a>
+                <a href="บท4.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🛒</span>
+                    <span>
+                        <strong>บทที่ 4</strong>
+                        <small>การซื้อของและการสั่งอาหาร</small>
+                    </span>
+                </a>
+                <a href="บท5.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🚆</span>
+                    <span>
+                        <strong>บทที่ 5</strong>
+                        <small>การเดินทางและการถามทาง</small>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <a href="chinese-lesson-game.html"
+           class="nav-link">
+            🎮 เกมฝึกภาษา
+        </a>
+    </nav>
+
+    <div class="top-actions navbar-actions">
+        <div id="userArea"></div>
+        <button id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="เปลี่ยนธีม">🌙</button>
+    </div>
+</header>
+</header>
+
+<section class="hero">
+    <div>
+        <p class="tag">Chinese Beginner</p>
+
+        <h1>
+            ฝึกภาษาจีน<br>
+            <span>แบบเข้าใจง่าย</span>
+        </h1>
+
+        <p>
+            เว็บไซต์สำหรับฝึกภาษาจีนเบื้องต้น
+            เรียนคำศัพท์ พินอิน วรรณยุกต์
+            และประโยคจากบทเรียน 1-5
+        </p>
+
+        <a href="#initials" class="btn">เริ่มเรียน ↓</a>
+    </div>
+
+    <div class="hero-box">
+        你好！
+        <small>Nǐ hǎo!</small>
+        <b>สวัสดี!</b>
+    </div>
+</section>
+
+
+<main>
+
+<!-- พยัญชนะ -->
+<section id="initials" class="section">
+
+    <div class="title">
+        <span>01</span>
+
+        <div>
+            <small>พื้นฐาน</small>
+            <h2>พยัญชนะภาษาจีนกลาง 23 ตัว</h2>
+        </div>
+    </div>
+
+    <p>
+        คลิกที่ตัวอักษรเพื่อฟังเสียง
+    </p>
+
+    <div class="initial-grid">
+
+        <button onclick="speak('ㄅ')">
+            <strong>b</strong>
+            <small>波</small>
+        </button>
+
+        <button onclick="speak('ㄆ')">
+            <strong>p</strong>
+            <small>坡</small>
+        </button>
+
+        <button onclick="speak('ㄇ')">
+            <strong>m</strong>
+            <small>摸</small>
+        </button>
+
+        <button onclick="speak('ㄈ')">
+            <strong>f</strong>
+            <small>佛</small>
+        </button>
+
+        <button onclick="speak('ㄉ')">
+            <strong>d</strong>
+            <small>得</small>
+        </button>
+
+        <button onclick="speak('ㄊ')">
+            <strong>t</strong>
+            <small>特</small>
+        </button>
+
+        <button onclick="speak('ㄋ')">
+            <strong>n</strong>
+            <small>呢</small>
+        </button>
+
+        <button onclick="speak('ㄌ')">
+            <strong>l</strong>
+            <small>乐</small>
+        </button>
+
+        <button onclick="speak('ㄍ')">
+            <strong>g</strong>
+            <small>哥</small>
+        </button>
+
+        <button onclick="speak('ㄎ')">
+            <strong>k</strong>
+            <small>科</small>
+        </button>
+
+        <button onclick="speak('ㄏ')">
+            <strong>h</strong>
+            <small>喝</small>
+        </button>
+
+        <button onclick="speak('ㄐ')">
+            <strong>j</strong>
+            <small>鸡</small>
+        </button>
+
+        <button onclick="speak('ㄑ')">
+            <strong>q</strong>
+            <small>七</small>
+        </button>
+
+        <button onclick="speak('ㄒ')">
+            <strong>x</strong>
+            <small>西</small>
+        </button>
+
+        <button onclick="speak('ㄓ')">
+            <strong>zh</strong>
+            <small>知</small>
+        </button>
+
+        <button onclick="speak('ㄔ')">
+            <strong>ch</strong>
+            <small>吃</small>
+        </button>
+
+        <button onclick="speak('ㄕ')">
+            <strong>sh</strong>
+            <small>师</small>
+        </button>
+
+        <button onclick="speak('ㄖ')">
+            <strong>r</strong>
+            <small>日</small>
+        </button>
+
+        <button onclick="speak('ㄗ')">
+            <strong>z</strong>
+            <small>资</small>
+        </button>
+
+        <button onclick="speak('ㄘ')">
+            <strong>c</strong>
+            <small>词</small>
+        </button>
+
+        <button onclick="speak('ㄙ')">
+            <strong>s</strong>
+            <small>思</small>
+        </button>
+
+        <button onclick="speak('丨')">
+            <strong>y</strong>
+            <small>衣</small>
+        </button>
+
+        <button onclick="speak('ㄨ')">
+            <strong>w</strong>
+            <small>屋</small>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- พื้นฐาน -->
+<section class="section">
+
+    <div class="title">
+        <span>02</span>
+
+        <div>
+            <small>พื้นฐานภาษาจีน</small>
+            <h2>汉字 · Pinyin · วรรณยุกต์</h2>
+        </div>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>汉字 — Hànzì</h3>
+
+            <p>
+                ตัวอักษรที่ใช้เขียนภาษาจีน
+                แต่ละตัวมักมีความหมายของตัวเอง
+            </p>
+
+            <div class="word">
+                我
+                <small>wǒ</small>
+                <b>ฉัน / ผม</b>
+            </div>
+
+            <div class="word">
+                你
+                <small>nǐ</small>
+                <b>คุณ</b>
+            </div>
+
+            <div class="word">
+                人
+                <small>rén</small>
+                <b>คน</b>
+            </div>
+
+            <div class="word">
+                好
+                <small>hǎo</small>
+                <b>ดี</b>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h3>拼音 — Pīnyīn</h3>
+
+            <p>
+                ระบบการเขียนเสียงภาษาจีน
+                ด้วยตัวอักษรโรมัน
+            </p>
+
+            <div class="big-word">
+                中文
+            </div>
+
+            <p>Zhōngwén = ภาษาจีน</p>
+        </div>
+
+
+        <div class="card">
+
+            <h3>4 วรรณยุกต์</h3>
+
+            <p>
+                เสียง ma เป็นตัวอย่างของ
+                วรรณยุกต์ภาษาจีน 4 เสียง
+            </p>
+
+            <p>
+                1️⃣ mā — 妈 = แม่<br>
+                2️⃣ má — 麻 = ป่าน<br>
+                3️⃣ mǎ — 马 = ม้า<br>
+                4️⃣ mà — 骂 = ดุด่า
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="vowels" class="section vowel-section">
+    <div class="title">
+        <span>03</span>
+        <div>
+            <small>PINYIN</small>
+            <h2>เสียงสระเดี่ยว</h2>
+            <small>单韵母 (Dānyùnmǔ)</small>
+        </div>
+    </div>
+    <p>สระพื้นฐานที่ใช้สร้างเสียงในภาษาจีนกลาง คลิกปุ่ม 🔊 เพื่อฟังเสียง</p>
+    <div class="vowel-grid-home">
+        <button class="vowel-card-home" onclick="speak('啊')"><strong>a</strong><span>啊</span><small>เสียง อา</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('喔')"><strong>o</strong><span>喔</span><small>เสียง ออ</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('饿')"><strong>e</strong><span>饿</span><small>เสียง เออ</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('衣')"><strong>i</strong><span>衣</span><small>เสียง อี</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('乌')"><strong>u</strong><span>乌</span><small>เสียง อู</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('鱼')"><strong>ü</strong><span>鱼</span><small>เสียง อวี</small><b>🔊 ฟังเสียง</b></button>
+    </div>
+</section>
+
+<section id="compound-vowels" class="section vowel-section">
+    <div class="title">
+        <span>04</span>
+        <div>
+            <small>PINYIN</small>
+            <h2>เสียงสระผสม</h2>
+            <small>复韵母 (Fùyùnmǔ)</small>
+        </div>
+    </div>
+    <p>เกิดจากการนำเสียงสระมาผสมกันเพื่อสร้างเสียงใหม่</p>
+    <div class="vowel-grid-home compound">
+        <button class="vowel-card-home" onclick="speak('爱')"><strong>ai</strong><span>爱</span><small>เช่น 爱 = รัก</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('黑')"><strong>ei</strong><span>黑</span><small>เช่น 黑 = ดำ</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('好')"><strong>ao</strong><span>好</span><small>เช่น 好 = ดี</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('口')"><strong>ou</strong><span>口</span><small>เช่น 口 = ปาก</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('家')"><strong>ia</strong><span>家</span><small>เช่น 家 = บ้าน</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('谢')"><strong>ie</strong><span>谢</span><small>เช่น 谢 = ขอบคุณ</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('花')"><strong>ua</strong><span>花</span><small>เช่น 花 = ดอกไม้</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('多')"><strong>uo</strong><span>多</span><small>เช่น 多 = มาก</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('月')"><strong>üe</strong><span>月</span><small>เช่น 月 = เดือน</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('小')"><strong>iao</strong><span>小</span><small>เช่น 小 = เล็ก</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('六')"><strong>iou</strong><span>六</span><small>เช่น 六 = หก</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('快')"><strong>uai</strong><span>快</span><small>เช่น 快 = เร็ว</small><b>🔊 ฟังเสียง</b></button>
+        <button class="vowel-card-home" onclick="speak('水')"><strong>uei</strong><span>水</span><small>เช่น 水 = น้ำ</small><b>🔊 ฟังเสียง</b></button>
+    </div>
+</section>
+
+<!-- บทเรียน -->
+<section class="section">
+
+    <div class="title">
+        <span>05</span>
+
+        <div>
+            <small>บทเรียน</small>
+            <h2>เลือกบทเรียน</h2>
+        </div>
+    </div>
+
+    <div class="lesson-list">
+
+        <a href="บท1.html">
+            <b>บทที่ 1</b>
+            <span>พื้นฐานและการทักทาย</span>
+        </a>
+
+        <a href="บท2.html">
+            <b>บทที่ 2</b>
+            <span>ตัวเลข เวลา และวันที่</span>
+        </a>
+
+        <a href="บท3.html">
+            <b>บทที่ 3</b>
+            <span>ครอบครัวและชีวิตประจำวัน</span>
+        </a>
+
+        <a href="บท4.html">
+            <b>บทที่ 4</b>
+            <span>การซื้อของและการสั่งอาหาร</span>
+        </a>
+
+        <a href="บท5.html">
+            <b>บทที่ 5</b>
+            <span>การเดินทางและการถามทาง</span>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    🇨🇳 Chinese Easy
+</footer>
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

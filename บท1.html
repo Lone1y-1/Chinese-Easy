@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทที่ 1 - Chinese Easy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo">
+        <span class="logo-flag">🇨🇳</span>
+        <span>Chinese Easy</span>
+    </div>
+
+    <nav class="nav-main" aria-label="เมนูหลัก">
+        <a href="index.html"
+           class="home-icon"
+           title="Home"
+           aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+                <path d="M9 21v-6h6v6"></path>
+            </svg>
+        </a>
+
+        <div class="nav-dropdown">
+            <button class="dropdown-btn active"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                <span>📚 บทเรียน</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="บท1.html" class="lesson-menu-item current">
+                    <span class="lesson-icon">🔤</span>
+                    <span>
+                        <strong>บทที่ 1</strong>
+                        <small>พื้นฐานภาษาจีนและการทักทาย</small>
+                    </span>
+                </a>
+                <a href="บท2.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔢</span>
+                    <span>
+                        <strong>บทที่ 2</strong>
+                        <small>ตัวเลข เวลา และวันที่</small>
+                    </span>
+                </a>
+                <a href="บท3.html" class="lesson-menu-item">
+                    <span class="lesson-icon">👨‍👩‍👧‍👦</span>
+                    <span>
+                        <strong>บทที่ 3</strong>
+                        <small>ครอบครัวและชีวิตประจำวัน</small>
+                    </span>
+                </a>
+                <a href="บท4.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🛒</span>
+                    <span>
+                        <strong>บทที่ 4</strong>
+                        <small>การซื้อของและการสั่งอาหาร</small>
+                    </span>
+                </a>
+                <a href="บท5.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🚆</span>
+                    <span>
+                        <strong>บทที่ 5</strong>
+                        <small>การเดินทางและการถามทาง</small>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <a href="chinese-lesson-game.html"
+           class="nav-link">
+            🎮 เกมฝึกภาษา
+        </a>
+    </nav>
+
+    <div class="top-actions navbar-actions">
+        <div id="userArea"></div>
+        <button id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="เปลี่ยนธีม">🌙</button>
+    </div>
+</header>
+
+<main>
+
+<section class="lesson-head">
+
+    <div class="title">
+        <span>01</span>
+
+        <div>
+            <small>บทเรียน</small>
+            <h1>พื้นฐานภาษาจีนและการทักทาย</h1>
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+
+<h2>📖 คำศัพท์สำคัญ</h2>
+
+<div class="vocab-grid">
+
+    <button onclick="speak('你好')">
+        <strong>你好</strong>
+        <small>nǐ hǎo</small>
+        <span>สวัสดี</span>
+    </button>
+
+    <button onclick="speak('您好')">
+        <strong>您好</strong>
+        <small>nín hǎo</small>
+        <span>สวัสดี (สุภาพ)</span>
+    </button>
+
+    <button onclick="speak('我')">
+        <strong>我</strong>
+        <small>wǒ</small>
+        <span>ฉัน / ผม</span>
+    </button>
+
+    <button onclick="speak('你')">
+        <strong>你</strong>
+        <small>nǐ</small>
+        <span>คุณ</span>
+    </button>
+
+    <button onclick="speak('您')">
+        <strong>您</strong>
+        <small>nín</small>
+        <span>คุณ (สุภาพ)</span>
+    </button>
+
+    <button onclick="speak('他')">
+        <strong>他</strong>
+        <small>tā</small>
+        <span>เขา</span>
+    </button>
+
+    <button onclick="speak('她')">
+        <strong>她</strong>
+        <small>tā</small>
+        <span>เธอ</span>
+    </button>
+
+    <button onclick="speak('是')">
+        <strong>是</strong>
+        <small>shì</small>
+        <span>เป็น / คือ</span>
+    </button>
+
+    <button onclick="speak('叫')">
+        <strong>叫</strong>
+        <small>jiào</small>
+        <span>ชื่อ / เรียกว่า</span>
+    </button>
+
+    <button onclick="speak('名字')">
+        <strong>名字</strong>
+        <small>míngzi</small>
+        <span>ชื่อ</span>
+    </button>
+
+    <button onclick="speak('什么')">
+        <strong>什么</strong>
+        <small>shénme</small>
+        <span>อะไร</span>
+    </button>
+
+    <button onclick="speak('谁')">
+        <strong>谁</strong>
+        <small>shéi</small>
+        <span>ใคร</span>
+    </button>
+
+    <button onclick="speak('很')">
+        <strong>很</strong>
+        <small>hěn</small>
+        <span>มาก / ค่อนข้าง</span>
+    </button>
+
+    <button onclick="speak('好')">
+        <strong>好</strong>
+        <small>hǎo</small>
+        <span>ดี</span>
+    </button>
+
+    <button onclick="speak('谢谢')">
+        <strong>谢谢</strong>
+        <small>xièxie</small>
+        <span>ขอบคุณ</span>
+    </button>
+
+    <button onclick="speak('不客气')">
+        <strong>不客气</strong>
+        <small>bú kèqi</small>
+        <span>ไม่เป็นไร</span>
+    </button>
+
+    <button onclick="speak('对不起')">
+        <strong>对不起</strong>
+        <small>duìbuqǐ</small>
+        <span>ขอโทษ</span>
+    </button>
+
+    <button onclick="speak('再见')">
+        <strong>再见</strong>
+        <small>zàijiàn</small>
+        <span>ลาก่อน</span>
+    </button>
+
+    <button onclick="speak('认识')">
+        <strong>认识</strong>
+        <small>rènshi</small>
+        <span>รู้จัก</span>
+    </button>
+
+    <button onclick="speak('高兴')">
+        <strong>高兴</strong>
+        <small>gāoxìng</small>
+        <span>ดีใจ / ยินดี</span>
+    </button>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>💬 ตัวอย่างประโยค</h2>
+
+<div class="sentences">
+
+    <div class="sentence">
+        <button onclick="speak('你好')">🔊</button>
+        <div>
+            <strong>你好！</strong>
+            <small>Nǐ hǎo!</small>
+        </div>
+        <span>สวัสดี!</span>
+    </div>
+
+    <div class="sentence">
+        <button onclick="speak('你叫什么名字')">🔊</button>
+        <div>
+            <strong>你叫什么名字？</strong>
+            <small>Nǐ jiào shénme míngzi?</small>
+        </div>
+        <span>คุณชื่ออะไร?</span>
+    </div>
+
+    <div class="sentence">
+        <button onclick="speak('我叫小明')">🔊</button>
+        <div>
+            <strong>我叫小明。</strong>
+            <small>Wǒ jiào Xiǎomíng.</small>
+        </div>
+        <span>ฉันชื่อเสี่ยวหมิง</span>
+    </div>
+
+    <div class="sentence">
+        <button onclick="speak('你是学生吗')">🔊</button>
+        <div>
+            <strong>你是学生吗？</strong>
+            <small>Nǐ shì xuéshēng ma?</small>
+        </div>
+        <span>คุณเป็นนักเรียน/นักศึกษาหรือไม่?</span>
+    </div>
+
+    <div class="sentence">
+        <button onclick="speak('是的我是学生')">🔊</button>
+        <div>
+            <strong>是的我是学生。</strong>
+            <small>Shì de wǒ shì xuéshēng.</small>
+        </div>
+        <span>ใช่ ฉันเป็นนักเรียน/นักศึกษา</span>
+    </div>
+
+    <div class="sentence">
+        <button onclick="speak('很高兴认识你')">🔊</button>
+        <div>
+            <strong>很高兴认识你。</strong>
+            <small>Hěn gāoxìng rènshi nǐ.</small>
+        </div>
+        <span>ยินดีที่ได้รู้จักคุณ</span>
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>🇨🇳 Chinese Easy · บทที่ 1</footer>
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

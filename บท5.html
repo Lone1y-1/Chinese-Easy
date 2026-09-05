@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทที่ 5 - Chinese Easy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo">
+        <span class="logo-flag">🇨🇳</span>
+        <span>Chinese Easy</span>
+    </div>
+
+    <nav class="nav-main" aria-label="เมนูหลัก">
+        <a href="index.html"
+           class="home-icon"
+           title="Home"
+           aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+                <path d="M9 21v-6h6v6"></path>
+            </svg>
+        </a>
+
+        <div class="nav-dropdown">
+            <button class="dropdown-btn active"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                <span>📚 บทเรียน</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="บท1.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔤</span>
+                    <span>
+                        <strong>บทที่ 1</strong>
+                        <small>พื้นฐานภาษาจีนและการทักทาย</small>
+                    </span>
+                </a>
+                <a href="บท2.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔢</span>
+                    <span>
+                        <strong>บทที่ 2</strong>
+                        <small>ตัวเลข เวลา และวันที่</small>
+                    </span>
+                </a>
+                <a href="บท3.html" class="lesson-menu-item">
+                    <span class="lesson-icon">👨‍👩‍👧‍👦</span>
+                    <span>
+                        <strong>บทที่ 3</strong>
+                        <small>ครอบครัวและชีวิตประจำวัน</small>
+                    </span>
+                </a>
+                <a href="บท4.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🛒</span>
+                    <span>
+                        <strong>บทที่ 4</strong>
+                        <small>การซื้อของและการสั่งอาหาร</small>
+                    </span>
+                </a>
+                <a href="บท5.html" class="lesson-menu-item current">
+                    <span class="lesson-icon">🚆</span>
+                    <span>
+                        <strong>บทที่ 5</strong>
+                        <small>การเดินทางและการถามทาง</small>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <a href="chinese-lesson-game.html"
+           class="nav-link">
+            🎮 เกมฝึกภาษา
+        </a>
+    </nav>
+
+    <div class="top-actions navbar-actions">
+        <div id="userArea"></div>
+        <button id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="เปลี่ยนธีม">🌙</button>
+    </div>
+</header>
+
+<main>
+
+<section class="lesson-head">
+
+    <div class="title">
+        <span>05</span>
+
+        <div>
+            <small>บทเรียน</small>
+            <h1>การเดินทางและการถามทาง</h1>
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+
+<h1>บทที่ 5 การเดินทางและการถามทาง</h1>
+
+<h2>🚆 คำศัพท์</h2>
+
+<div class="vocab-grid">
+
+<button onclick="speak('去')">
+<strong>去</strong><small>qù</small><span>ไป</span>
+</button>
+
+<button onclick="speak('来')">
+<strong>来</strong><small>lái</small><span>มา</span>
+</button>
+
+<button onclick="speak('走')">
+<strong>走</strong><small>zǒu</small><span>เดิน</span>
+</button>
+
+<button onclick="speak('坐')">
+<strong>坐</strong><small>zuò</small><span>นั่ง / โดยสาร</span>
+</button>
+
+<button onclick="speak('车')">
+<strong>车</strong><small>chē</small><span>รถ</span>
+</button>
+
+<button onclick="speak('出租车')">
+<strong>出租车</strong><small>chūzūchē</small><span>แท็กซี่</span>
+</button>
+
+<button onclick="speak('公共汽车')">
+<strong>公共汽车</strong><small>gōnggòng qìchē</small><span>รถโดยสาร</span>
+</button>
+
+<button onclick="speak('地铁')">
+<strong>地铁</strong><small>dìtiě</small><span>รถไฟใต้ดิน</span>
+</button>
+
+<button onclick="speak('火车')">
+<strong>火车</strong><small>huǒchē</small><span>รถไฟ</span>
+</button>
+
+<button onclick="speak('飞机')">
+<strong>飞机</strong><small>fēijī</small><span>เครื่องบิน</span>
+</button>
+
+<button onclick="speak('机场')">
+<strong>机场</strong><small>jīchǎng</small><span>สนามบิน</span>
+</button>
+
+<button onclick="speak('车站')">
+<strong>车站</strong><small>chēzhàn</small><span>สถานี</span>
+</button>
+
+<button onclick="speak('学校')">
+<strong>学校</strong><small>xuéxiào</small><span>โรงเรียน</span>
+</button>
+
+<button onclick="speak('医院')">
+<strong>医院</strong><small>yīyuàn</small><span>โรงพยาบาล</span>
+</button>
+
+<button onclick="speak('银行')">
+<strong>银行</strong><small>yínháng</small><span>ธนาคาร</span>
+</button>
+
+<button onclick="speak('商店')">
+<strong>商店</strong><small>shāngdiàn</small><span>ร้านค้า</span>
+</button>
+
+<button onclick="speak('餐厅')">
+<strong>餐厅</strong><small>cānting</small><span>ร้านอาหาร</span>
+</button>
+
+<button onclick="speak('厕所')">
+<strong>厕所</strong><small>cèsuǒ</small><span>ห้องน้ำ</span>
+</button>
+
+<button onclick="speak('哪里')">
+<strong>哪里</strong><small>nǎlǐ</small><span>ที่ไหน</span>
+</button>
+
+<button onclick="speak('左边')">
+<strong>左边</strong><small>zuǒbian</small><span>ด้านซ้าย</span>
+</button>
+
+<button onclick="speak('右边')">
+<strong>右边</strong><small>yòubian</small><span>ด้านขวา</span>
+</button>
+
+<button onclick="speak('前面')">
+<strong>前面</strong><small>qiánmiàn</small><span>ด้านหน้า</span>
+</button>
+
+<button onclick="speak('后面')">
+<strong>后面</strong><small>hòumiàn</small><span>ด้านหลัง</span>
+</button>
+
+<button onclick="speak('里面')">
+<strong>里面</strong><small>lǐmiàn</small><span>ด้านใน</span>
+</button>
+
+<button onclick="speak('外面')">
+<strong>外面</strong><small>wàimiàn</small><span>ด้านนอก</span>
+</button>
+
+<button onclick="speak('远')">
+<strong>远</strong><small>yuǎn</small><span>ไกล</span>
+</button>
+
+<button onclick="speak('近')">
+<strong>近</strong><small>jìn</small><span>ใกล้</span>
+</button>
+
+<button onclick="speak('直走')">
+<strong>直走</strong><small>zhí zǒu</small><span>เดินตรงไป</span>
+</button>
+
+<button onclick="speak('怎么走')">
+<strong>怎么走</strong><small>zěnme zǒu</small><span>ไปอย่างไร</span>
+</button>
+
+</div>
+
+
+<h2>💬 ตัวอย่างประโยค</h2>
+
+<div class="sentences">
+
+<div class="sentence">
+<button onclick="speak('厕所在哪里')">🔊</button>
+<div>
+<strong>厕所在哪里？</strong>
+<small>Cèsuǒ zài nǎlǐ?</small>
+</div>
+<span>ห้องน้ำอยู่ที่ไหน?</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('银行在哪里')">🔊</button>
+<div>
+<strong>银行在哪里？</strong>
+<small>Yínháng zài nǎlǐ?</small>
+</div>
+<span>ธนาคารอยู่ที่ไหน?</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('学校怎么走')">🔊</button>
+<div>
+<strong>学校怎么走？</strong>
+<small>Xuéxiào zěnme zǒu?</small>
+</div>
+<span>ไปโรงเรียนอย่างไร?</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('在左边')">🔊</button>
+<div>
+<strong>在左边。</strong>
+<small>Zài zuǒbian.</small>
+</div>
+<span>อยู่ทางซ้าย</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('在右边')">🔊</button>
+<div>
+<strong>在右边。</strong>
+<small>Zài yòubian.</small>
+</div>
+<span>อยู่ทางขวา</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('医院在前面')">🔊</button>
+<div>
+<strong>医院在前面。</strong>
+<small>Yīyuàn zài qiánmiàn.</small>
+</div>
+<span>โรงพยาบาลอยู่ด้านหน้า</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('请问地铁站在哪里')">🔊</button>
+<div>
+<strong>请问，地铁站在哪里？</strong>
+<small>Qǐngwèn, dìtiě zhàn zài nǎlǐ?</small>
+</div>
+<span>สถานีรถไฟใต้ดินอยู่ที่ไหน?</span>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>🇨🇳 Chinese Easy · บทที่ 5</footer>
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

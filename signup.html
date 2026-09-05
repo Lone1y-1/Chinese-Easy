@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sign Up | Chinese Learn</title>
+
+    <link rel="stylesheet" href="auth.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="chinese-bg">
+        <span>中</span>
+        <span>学</span>
+        <span>你</span>
+        <span>好</span>
+        <span>语</span>
+        <span>言</span>
+    </div>
+
+    <!-- Lanterns -->
+    <div class="lantern lantern-1">🏮</div>
+    <div class="lantern lantern-2">🏮</div>
+    <div class="lantern lantern-3">🏮</div>
+
+    <main class="auth-container">
+
+        <div class="auth-card signup-card">
+
+            <!-- Logo -->
+            <div class="auth-logo">
+
+                <div class="logo-circle">
+                    学
+                </div>
+
+                <h1>Chinese Learn</h1>
+
+                <p>
+                    开始学习中文 · Start Learning
+                </p>
+
+            </div>
+
+            <!-- Title -->
+            <div class="auth-title">
+
+                <span class="title-icon">
+                    🐼
+                </span>
+
+                <div>
+
+                    <h2>
+                        สร้างบัญชีผู้เรียน
+                    </h2>
+
+                    <p>
+                        มาเริ่มต้นเรียนภาษาจีนกันเถอะ!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Form -->
+            <form id="signupForm">
+
+                <!-- Name -->
+                <div class="input-group">
+
+                    <label for="signupName">
+                        👤 ชื่อผู้เรียน
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="เช่น Lonely"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="signupEmail">
+                        ✉️ อีเมล
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            ✉️
+                        </span>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="example@email.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="signupPassword">
+                        🔒 รหัสผ่าน
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="อย่างน้อย 6 ตัวอักษร"
+                            required
+                            minlength="6"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('signupPassword', this)"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Confirm -->
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        🔐 ยืนยันรหัสผ่าน
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            🔐
+                        </span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="กรอกรหัสผ่านอีกครั้ง"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('confirmPassword', this)"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Terms -->
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        ฉันยอมรับเงื่อนไขการใช้งานเว็บไซต์
+                    </span>
+
+                </label>
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="auth-submit"
+                >
+
+                    <span>
+                        สมัครสมาชิก
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+            <!-- Login -->
+            <div class="switch-auth">
+
+                <p>
+                    มีบัญชีอยู่แล้ว?
+                    <a href="login.html">
+                        เข้าสู่ระบบ
+                    </a>
+                </p>
+
+            </div>
+
+            <!-- Home -->
+            <a
+                href="index.html"
+                class="home-link"
+            >
+                ← กลับหน้าหลัก
+            </a>
+
+        </div>
+
+    </main>
+
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

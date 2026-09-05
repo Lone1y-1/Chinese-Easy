@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทที่ 3 - Chinese Easy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo">
+        <span class="logo-flag">🇨🇳</span>
+        <span>Chinese Easy</span>
+    </div>
+
+    <nav class="nav-main" aria-label="เมนูหลัก">
+        <a href="index.html"
+           class="home-icon"
+           title="Home"
+           aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5"></path>
+                <path d="M5 9.5V21h14V9.5"></path>
+                <path d="M9 21v-6h6v6"></path>
+            </svg>
+        </a>
+
+        <div class="nav-dropdown">
+            <button class="dropdown-btn active"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                <span>📚 บทเรียน</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6"></path>
+                </svg>
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="บท1.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔤</span>
+                    <span>
+                        <strong>บทที่ 1</strong>
+                        <small>พื้นฐานภาษาจีนและการทักทาย</small>
+                    </span>
+                </a>
+                <a href="บท2.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🔢</span>
+                    <span>
+                        <strong>บทที่ 2</strong>
+                        <small>ตัวเลข เวลา และวันที่</small>
+                    </span>
+                </a>
+                <a href="บท3.html" class="lesson-menu-item current">
+                    <span class="lesson-icon">👨‍👩‍👧‍👦</span>
+                    <span>
+                        <strong>บทที่ 3</strong>
+                        <small>ครอบครัวและชีวิตประจำวัน</small>
+                    </span>
+                </a>
+                <a href="บท4.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🛒</span>
+                    <span>
+                        <strong>บทที่ 4</strong>
+                        <small>การซื้อของและการสั่งอาหาร</small>
+                    </span>
+                </a>
+                <a href="บท5.html" class="lesson-menu-item">
+                    <span class="lesson-icon">🚆</span>
+                    <span>
+                        <strong>บทที่ 5</strong>
+                        <small>การเดินทางและการถามทาง</small>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <a href="chinese-lesson-game.html"
+           class="nav-link">
+            🎮 เกมฝึกภาษา
+        </a>
+    </nav>
+
+    <div class="top-actions navbar-actions">
+        <div id="userArea"></div>
+        <button id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="เปลี่ยนธีม">🌙</button>
+    </div>
+</header>
+
+<main>
+
+<section class="lesson-head">
+
+    <div class="title">
+        <span>03</span>
+
+        <div>
+            <small>บทเรียน</small>
+            <h1>ครอบครัวและชีวิตประจำวัน</h1>
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+
+<h2>👨‍👩‍👧‍👦 คำศัพท์</h2>
+
+<div class="vocab-grid">
+
+<button onclick="speak('家')">
+<strong>家</strong><small>jiā</small><span>บ้าน / ครอบครัว</span>
+</button>
+
+<button onclick="speak('家人')">
+<strong>家人</strong><small>jiārén</small><span>สมาชิกครอบครัว</span>
+</button>
+
+<button onclick="speak('爸爸')">
+<strong>爸爸</strong><small>bàba</small><span>พ่อ</span>
+</button>
+
+<button onclick="speak('妈妈')">
+<strong>妈妈</strong><small>māma</small><span>แม่</span>
+</button>
+
+<button onclick="speak('哥哥')">
+<strong>哥哥</strong><small>gēge</small><span>พี่ชาย</span>
+</button>
+
+<button onclick="speak('姐姐')">
+<strong>姐姐</strong><small>jiějie</small><span>พี่สาว</span>
+</button>
+
+<button onclick="speak('弟弟')">
+<strong>弟弟</strong><small>dìdi</small><span>น้องชาย</span>
+</button>
+
+<button onclick="speak('妹妹')">
+<strong>妹妹</strong><small>mèimei</small><span>น้องสาว</span>
+</button>
+
+<button onclick="speak('朋友')">
+<strong>朋友</strong><small>péngyou</small><span>เพื่อน</span>
+</button>
+
+<button onclick="speak('有')">
+<strong>有</strong><small>yǒu</small><span>มี</span>
+</button>
+
+<button onclick="speak('没有')">
+<strong>没有</strong><small>méiyǒu</small><span>ไม่มี</span>
+</button>
+
+<button onclick="speak('起床')">
+<strong>起床</strong><small>qǐchuáng</small><span>ตื่นนอน</span>
+</button>
+
+<button onclick="speak('睡觉')">
+<strong>睡觉</strong><small>shuìjiào</small><span>นอน</span>
+</button>
+
+<button onclick="speak('吃饭')">
+<strong>吃饭</strong><small>chīfàn</small><span>กินข้าว</span>
+</button>
+
+<button onclick="speak('喝水')">
+<strong>喝水</strong><small>hē shuǐ</small><span>ดื่มน้ำ</span>
+</button>
+
+<button onclick="speak('学习')">
+<strong>学习</strong><small>xuéxí</small><span>เรียน</span>
+</button>
+
+<button onclick="speak('工作')">
+<strong>工作</strong><small>gōngzuò</small><span>ทำงาน</span>
+</button>
+
+<button onclick="speak('回家')">
+<strong>回家</strong><small>huí jiā</small><span>กลับบ้าน</span>
+</button>
+
+<button onclick="speak('休息')">
+<strong>休息</strong><small>xiūxi</small><span>พักผ่อน</span>
+</button>
+
+</div>
+
+
+<h2>💬 ประโยค</h2>
+
+<div class="sentences">
+
+<div class="sentence">
+<button onclick="speak('你家有几个人')">🔊</button>
+<div>
+<strong>你家有几个人？</strong>
+<small>Nǐ jiā yǒu jǐ ge rén?</small>
+</div>
+<span>ครอบครัวคุณมีกี่คน?</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我家有四个人')">🔊</button>
+<div>
+<strong>我家有四个人。</strong>
+<small>Wǒ jiā yǒu sì ge rén.</small>
+</div>
+<span>ครอบครัวฉันมี 4 คน</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('这是我的妈妈')">🔊</button>
+<div>
+<strong>这是我的妈妈。</strong>
+<small>Zhè shì wǒ de māma.</small>
+</div>
+<span>นี่คือแม่ของฉัน</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我有一个哥哥')">🔊</button>
+<div>
+<strong>我有一个哥哥。</strong>
+<small>Wǒ yǒu yí ge gēge.</small>
+</div>
+<span>ฉันมีพี่ชายหนึ่งคน</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我每天七点起床')">🔊</button>
+<div>
+<strong>我每天七点起床。</strong>
+<small>Wǒ měitiān qī diǎn qǐchuáng.</small>
+</div>
+<span>ฉันตื่นนอนตอนเจ็ดโมงทุกวัน</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我下午学习中文')">🔊</button>
+<div>
+<strong>我下午学习中文。</strong>
+<small>Wǒ xiàwǔ xuéxí Zhōngwén.</small>
+</div>
+<span>ฉันเรียนภาษาจีนตอนบ่าย</span>
+</div>
+
+<div class="sentence">
+<button onclick="speak('我晚上十点睡觉')">🔊</button>
+<div>
+<strong>我晚上十点睡觉。</strong>
+<small>Wǒ wǎnshang shí diǎn shuìjiào.</small>
+</div>
+<span>ฉันนอนตอนสี่ทุ่ม</span>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>🇨🇳 Chinese Easy · บทที่ 3</footer>
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
